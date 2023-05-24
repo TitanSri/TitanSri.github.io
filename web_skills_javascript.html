@@ -1,0 +1,164 @@
+<!DOCTYPE html> 
+<!-- This is the Web skills page which was validated from https://validator.w3.org/ 
+on 23/05/23 by Toby Sriratanakoul  -->
+<html lang="en">
+<head>
+   <title>Toby Sriratanakoul Portfolio Skills Javascript</title>
+   <meta charset="utf-8">
+   <meta name="author" content="Toby Sriratanakoul">
+   <meta name="description" content="Portfolio of Toby Sriratanakoul">
+   <meta name="keywords" content="Portfolio, Toby Sriratanakoul, ITC293 Student, CSU">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link href='https://fonts.googleapis.com/css?family=Montserrat+Alternates' rel='stylesheet'>
+   <style>
+   </style>
+   <link rel="stylesheet" href="css/styles_A4.css" media="screen">	
+   <link rel="stylesheet" href="css/styles_print_A4.css" media="print">
+   <script>
+   // this will load with the page
+   // changes the car list and picture
+   function newCar(){
+       var carList = ["Lamborghini", "Ferrari", "Porsche", "Koenigsegg", "McLaren", ];
+
+       var randomNumber = Math.floor(Math.random()*carList.length);
+
+       var theCar = carList[randomNumber];
+       {   
+       document.getElementById("car_output").innerHTML=theCar;
+       }
+       document.getElementById("carImage").src = "images/" + theCar + ".jpg";
+   }
+    // ordering a taxi form
+    function applySelections(form) {
+        var cb;  // collection of checkboxes
+        var message; // message element
+        var selectors = "";  // a list of selectors for message
+        var driver = form.elements["drivers"].value;
+        var driverChecked = form.elements["drivers"].checked;
+
+        console.log(driver);
+        console.log(driverChecked);
+
+        message = document.getElementById("message");
+        
+        // loops through the collection and adds the car type to the string
+        cb = form.elements["carType"];
+        for (let carType of cb) {
+          if (carType.checked) {
+            selectors += " - " + carType.value + "<br />"; 
+          }
+        } 
+
+        message.className = selectors;
+        
+        // makes sures the collection and driver is not empty or an alert will be displayed
+        if (driver.length <= 0 && selectors.length <= 0) {
+            alert("Please select at least one driver and one car type.");
+            return;
+        }      
+        else if (driver.length <= 0) {
+            alert("Please select at least one driver.");
+            return;
+        }
+        else if(selectors.length <= 0) {
+            alert("Please select at least car type.");
+            return;
+        }
+
+        document.getElementById("message").innerHTML = "Receipt: <br /> A car type will be sent : <br />" 
+            + selectors + "The driver is " + driver + " .Have a nice trip!";
+    } 
+</script>
+</head>
+
+<body class="bg" style="text-align: center" onload="newCar()">
+   <div id="content_container">
+      <header> 
+            <h1 class="h1">Javascript Sample</h1>
+      </header>
+      <nav>
+            <button class="tooltip" onclick="window.location.href = 'index.html';">Home
+                <span class="tooltiptext">Return to top of the Home page</span>
+            </button>
+            <button class="tooltip" onclick="window.location.href = 'about_me.html';">About me
+                <span class="tooltiptext">Redirect to About me page</span>
+            </button>
+            <button class="tooltip" onclick="window.location.href = 'resume.html';">Resume
+                <span class="tooltiptext">Redirect to Resume page</span>
+            </button>
+            <button class="tooltip" onclick="window.location.href = 'web_skills.html';">Web Skills
+                <span class="tooltiptext">Redirect to Web Skills page</span>
+            </button>
+      </nav>
+      <div class="container_right">
+            <main>
+                <p class="b">Here are some samples of my javascript skills</p>
+                <div id="box1">
+                    <div id="box2">
+                        <p>View our cars: <strong><span id="car_output"></span></strong></p>
+                        <img class="a" id="carImage" src="images/car.jpg" alt="car image"><br>
+                        <button type="button" id="press_button" onclick="newCar()">More Cars</button>
+                    </div>
+                </div>
+            <form> 
+            <table>
+                <tr>
+                    <th colspan="3" >Preferred Taxi</th>
+                </tr>              
+                    <tr>
+                        <td>
+                            <fieldset>
+                                <legend>Car Type</legend>
+                                <input type="checkbox" name="carType"
+                                value="sedan">sedan<br>
+                                <input type="checkbox" name="carType"
+                                value="van">van<br>
+                                <input type="checkbox" name="carType"
+                                value="limo">limo
+                                <br><br>
+                            </fieldset>
+                        </td>  
+                        <td>
+                             <fieldset>
+                                <legend>Driver</legend>
+                                <input type="radio" name="drivers" value="Jeff">Jeff<br>
+                                <input type="radio" name="drivers" value="Adam">Adam<br>
+                                <input type="radio" name="drivers" value="Daniel">Daniel
+                              </fieldset>
+                        </td>
+                        <td class="b" rowspan="3"><img class="d" src="images/car.jpg" alt="car"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="button" value="i'm ready to order my taxi!" onclick="applySelections(this.form);">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="a" colspan="2" >
+                            <div class="hidden" id="message">
+                                <pre></pre>
+                            </div>
+                        </td>
+                    </tr>
+            </table>
+            </form>
+            <footer>
+                <p>
+                    <strong>Email:</strong><a style="padding:2% 0%" 
+                     href="mailto:tsrira01@postoffice.csu.edu.au"> tsrira01@postoffice.csu.edu.au</a>
+                </p>
+                <p><strong>Phone:</strong> (+61) 123 456 789</p>
+                <p>
+                    <a href="http://fake.website.com.au/index.html" 
+                    target="_blank">http://fake.website.com.au/index.html</a>
+                </p>
+                <p>
+                    &copy; 2021. All rights reserved. Any material and content on this site is authorised to be used by the developer only.<br>
+                    Any external users who use the material and content will be punished according to the law.
+                <p>
+            </footer>
+         </main>     
+      </div>      
+      <div class="clearboth"></div>
+   </div>
+</body>	
+</html>	

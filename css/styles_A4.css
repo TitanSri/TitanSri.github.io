@@ -1,0 +1,257 @@
+/* This is the Web skills page which was validated from https://jigsaw.w3.org/css-validator/
+on 23/05/23 by Toby Sriratanakoul */
+
+table {
+	border-collapse: collapse;
+	border: thin solid transparent;
+	width: 90%;
+    height: 90%;
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: 5%;
+    margin-bottom: 5%;
+}
+tr {
+    background-color: #FDDA16;
+}
+
+th, td {
+	border: thin solid white;
+}
+
+th {
+	background-color: #FFFCC9;
+    height: 5%;
+}
+
+td {
+	text-align: left;
+}
+
+td.a {
+    border:10px solid white;
+    background-color: #FDB813;
+    border-style: double;
+    max-width: 300px;
+    color: white;
+    font-family: 'Courier New';
+}
+
+td.b{
+    width: 50%;
+}
+
+.width1 {
+	width: 20%;
+}
+
+.width2 {
+	width: 80%;
+}
+
+.bg {
+	background-image: url(../images/tech.jpg), 
+        linear-gradient(rgba(255,255,255,0.5),
+            rgba(255, 234, 0, 1));
+	height: 95%;
+	width: 95%;
+	background-position: center;
+	background-repeat: repeat;
+	background-attachment: fixed;
+    background-blend-mode: overlay;
+}
+
+body {
+	height: 100%;
+    width: 100%;
+}
+
+html {
+	height: 100%;
+}
+
+.h1 {
+	font-family: 'Montserrat Alternates';
+	color: black;
+	background-color: transparent;
+	font-weight: bold;
+	font-style: normal;
+	font-size: 500%;
+	margin:auto;
+	width:auto;
+	height:auto;
+	text-align: center;
+	text-decoration: underline;
+    background-color: #FFFCC9;
+}
+
+h2 {
+    margin:auto;
+    width:auto;
+    height:auto;
+    text-align: left;
+    color: #0036B0;
+}
+
+.h3 {
+	color: black;
+	background-color: transparent;
+	font-weight: bold;
+	font-style: normal;
+	font-size: 100%;
+	margin:auto;
+	width:auto;
+	height:auto;
+}
+
+h4 {
+    color: #145CFC;
+}
+
+h5 {
+    color: #0d96e6;
+}
+
+nav {
+	margin: auto;
+	padding: 3%;
+	text-align: center;
+	background-color: #FFC02E;
+    border: solid;
+}
+
+footer {
+	font-size: 75%;
+	opacity: 0.7;
+	margin: auto;
+	text-align: center;
+	color: black;
+	padding: 1%;
+}
+
+/* Tooltip container */
+ .tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 100%;
+    background-color: #145CFC;
+    color: #ffffff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    font-size: 100%;
+    position: absolute;
+    bottom: 100%;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+/* mouse over link */
+a:hover {
+    color: red;
+}
+
+button {
+    border: solid #FFFCC9 3px;
+    padding:2.5%;
+    background-color:#ffffff;
+    text-decoration:none;
+    display:inline-block;
+    font-size:75%;
+    text-align:center;
+    border-radius: 8px;
+}
+
+button:hover {  
+    color:#f3f3f1;
+    background-color: black;
+}
+
+p.a {
+    font-family: Times, Arial, Helvetica, sans-serif;
+}
+
+p.b {
+    background-color: yellow; 
+    border: solid;
+    padding: 1%;
+} 
+
+img {
+	height: 100%; 
+	width:100%;
+}
+
+img.a {
+	height: 10%;
+	width: 16%;
+}
+
+img.b {
+	height: 1000px;
+	width: 700px;
+}
+
+img.c {
+	padding:5%; 
+    background-color:yellow; 
+    border:solid #999999 0.5px; 
+    width:138px; 
+    height:92px;
+}
+
+img.d {
+    height: auto;
+    width: auto;
+    border: solid;
+}
+
+.MyDiv {
+    border: 5px outset yellow;
+    background-color: yellow;    
+    text-align: center;
+}
+
+.abc:nth-child(even) {
+    background-color: yellow;
+}
+
+.floating {  
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes floating {
+    from { transform: translate(0,  0px); }
+    50%  { transform: translate(0, 15px); }
+    to   { transform: translate(0, 0px); }    
+}
+
+#box1 {
+    background-color:yellow; 
+    padding:5%;
+    margin-top:5%;
+    border:solid;
+}
+   
+#box2 {
+    background-color:#f3f3f1;
+    padding:0% 5% 5% 5%;
+    border:solid;
+    border-radius:1%;  
+}
+
+legend {
+    font-weight: bold;
+}
+
