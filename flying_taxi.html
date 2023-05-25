@@ -13,25 +13,25 @@ on 23/05/23 by Toby Sriratanakoul  -->
    <link href='https://fonts.googleapis.com/css?family=Montserrat+Alternates' rel='stylesheet'>
    <script>
       // this will load with the page   
-      function welcomeMessage(){
+      function message(){
          alert("Welcome to the Flying Taxi - Newsletter Signup");
       }
       // checks the form to ensure the feilds are valid to type
-      function validateForm(){
-         var fname = document.forms["signup"]["firstName"].value;
-         var lname = document.forms["signup"]["lastName"].value;
-         var email = document.forms["signup"]["email"].value;
+      function validateSignUpForm(){
+         var fname = document.forms["newsletter"]["fName"].value;
+         var lname = document.forms["newsletter"]["lName"].value;
+         var email = document.forms["newsletter"]["email"].value;
          
          if (fname==""){
-            alert ("Please enter your first name");
+            alert ("The first name cannot be empty");
             return false;
          }              
          if (lname==""){
-            alert ("Please enter your last name");
+            alert ("The last name cannot be empty");
             return false;
          }
          if (email==""){
-            alert ("Please enter your email address");
+            alert ("The email cannot be empty");
             return false;
          }
          return true;
@@ -39,7 +39,7 @@ on 23/05/23 by Toby Sriratanakoul  -->
    </script>
 </head>
 	
-<body style="text-align: center" onload="welcomeMessage()" class="bg">
+<body style="text-align: center" onload="message()" class="bg">
    <header> 
         <h1 class="h1">Flying Taxi</h1>
    </header>
@@ -64,16 +64,16 @@ on 23/05/23 by Toby Sriratanakoul  -->
             * fields are compulsory.<br>
             Once the form is filled then press "Submit"
         </p>
-        <form name="signup" method="post" id="signup" action="http://csusap.csu.edu.au/cgi-bin/echo_form" 
-        onsubmit="return validateForm()">
+        <form name="newsletter" method="post" id="newsletter" action="http://csusap.csu.edu.au/cgi-bin/echo_form" 
+        onsubmit="return validateSignUpForm()">
             <h2>Flying Taxi - Newsletter Sign Up Form</h2>
             <fieldset style="background-color:yellow">
                 <legend>Personal Details.</legend>
-                <label for="firstName">*First Name:</label>
-                <input type="text" name="firstName" id="firstName" maxlength="60">
-                <label for="lastName">*Last Name:</label>
-                <input type="text" name="lastName" id="lastName" maxlength="60">
-                <label for="email">*Email Address:</label>
+                <label for="fName">*First Name:</label>
+                <input type="text" name="fName" id="fName" maxlength="60">
+                <label for="lName">*Last Name:</label>
+                <input type="text" name="lName" id="lName" maxlength="60">
+                <label for="email">*Email:</label>
                 <input type="email" name="email" id="email" maxlength="60">
                 <br><br>
                 <label for="state">What state do you live in:</label>
@@ -89,11 +89,11 @@ on 23/05/23 by Toby Sriratanakoul  -->
                 </select>
                 <br><br>
                 <p>What is your age group?</p>
-                <input type="radio" name="age" id="15-25" value="15-25">15-25
-                <input type="radio" name="age" id="26-35" value="26-35">26-35
-                <input type="radio" name="age" id="36-45" value="36-45">36-45
-                <input type="radio" name="age" id="46-55" value="46-55">46-55
-                <input type="radio" name="age" id="55" value="55">55+<br>
+                <input type="radio" name="ageGroup" id="15-25" value="15-25">15-25
+                <input type="radio" name="ageGroup" id="26-35" value="26-35">26-35
+                <input type="radio" name="ageGroup" id="36-45" value="36-45">36-45
+                <input type="radio" name="ageGroup" id="46-55" value="46-55">46-55
+                <input type="radio" name="ageGroup" id="55" value="55">55+<br>
                 <p>How often do you ride a taxi?</p>
                 <input type="radio" name="frequency" id="daily" value="daily">daily
                 <input type="radio" name="frequency" id="weekly" value="weekly">weekly
