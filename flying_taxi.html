@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- This is the Web skills page which was validated from https://validator.w3.org/ 
-on 23/05/23 by Toby Sriratanakoul  -->
+on 27/05/23 by Toby Sriratanakoul  -->
 <html lang="en">
 <head>
    <title>Toby Sriratanakoul Portfolio FLying Taxi Newsletter</title>
@@ -16,26 +16,31 @@ on 23/05/23 by Toby Sriratanakoul  -->
       function message(){
          alert("Welcome to the Flying Taxi - Newsletter Signup");
       }
-      // checks the form to ensure the feilds are valid to type
-      function validateSignUpForm(){
+     
+      // check the input boxes
+      function submitForm() {
          var fname = document.forms["newsletter"]["fName"].value;
          var lname = document.forms["newsletter"]["lName"].value;
          var email = document.forms["newsletter"]["email"].value;
+    
+         if (fname.length==0 && lname.length==0) {
+            alert("No first name or last name.");
+            return false;
+         }
+         else if (fname.length==0) {
+            alert("No first name.");
+            return false;
+         }
+         else if (lname.length==0) {
+            alert("No last name.");
+            return false;
+         }
+         else if (email.length==0) {
+            alert("No email");
+            return false;
+         }
          
-         if (fname==""){
-            alert ("The first name cannot be empty");
-            return false;
-         }              
-         if (lname==""){
-            alert ("The last name cannot be empty");
-            return false;
-         }
-         if (email==""){
-            alert ("The email cannot be empty");
-            return false;
-         }
-         return true;
-      }
+      } 
    </script>
 </head>
 	
@@ -65,7 +70,7 @@ on 23/05/23 by Toby Sriratanakoul  -->
             Once the form is filled then press "Submit"
         </p>
         <form name="newsletter" method="post" id="newsletter" action="http://csusap.csu.edu.au/cgi-bin/echo_form" 
-        onsubmit="return validateSignUpForm()">
+        onsubmit="return submitForm()">
             <h2>Flying Taxi - Newsletter Sign Up Form</h2>
             <fieldset style="background-color:yellow">
                 <legend>Personal Details.</legend>
