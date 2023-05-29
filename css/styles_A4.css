@@ -1,5 +1,9 @@
 /* This is the Web skills page which was validated from https://jigsaw.w3.org/css-validator/
-on 23/05/23 by Toby Sriratanakoul */
+on 29/05/23 by Toby Sriratanakoul */
+
+* {
+color: black;
+}
 
 table {
 	border-collapse: collapse;
